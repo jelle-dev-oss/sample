@@ -17,5 +17,15 @@ class MemberProfile extends Model
     {
         return $this->hasMany(Borrowing::class);
     }
+    protected $fillable = [
+        'user_id',
+        'student_id',
+        'address',
+        'contact_number',
+    ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
