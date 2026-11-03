@@ -3,8 +3,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-
-Route::get('/books', [BookController::class, 'index']);
 use App\Http\Controllers\MemberController;
 
 Route::get('/', function () {
@@ -12,3 +10,6 @@ Route::get('/', function () {
 });
 
 Route::get('/members', [MemberController::class, 'index']);
+Route::get('/books', [BookController::class, 'index']);
+
+
