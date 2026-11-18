@@ -16,7 +16,7 @@ return new class extends Migration
 
         $table->foreignId('book_id')
               ->constrained('books')
-              ->cascadeOnDelete();
+              ->cascadeOnDelete(); 
 
         $table->foreignId('member_profile_id')
               ->constrained('member_profiles')

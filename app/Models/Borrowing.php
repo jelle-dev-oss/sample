@@ -14,9 +14,9 @@ class Borrowing extends Model
         'returned_at',
     ];
 
-    public function book()
+    public function books()
     {
-        return $this->belongsTo(Book::class);
+        return $this->hasMany(Book::class);  //nganhi pud AHAHHA
     }
 
     public function memberProfile()

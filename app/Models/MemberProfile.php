@@ -15,9 +15,9 @@ class MemberProfile extends Model
 
     public function borrowings()
     {
-        return $this->hasMany(Borrowing::class);
+        return $this->hasMany(Borrowing::class); //same in here one to many relationship.
     }
-    protected $fillable = [
+    protected $fillable = [ //Listahan sa columns nga allowed ma-fill automatically.
         'user_id',
         'student_id',
         'address',

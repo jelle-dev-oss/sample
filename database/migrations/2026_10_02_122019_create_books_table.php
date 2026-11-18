@@ -12,13 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         
-        Schema::create('books', function (Blueprint $table) {
-            $table->id();
-            $table->string('title');
-            $table->string('author');
-            $table->string('isbn')->unique();
-            $table->integer('quantity')->default(1);
-            $table->timestamps();
+        Schema::create('books', function (Blueprint $table) { //para himo sa 'books' nga table sa database.
+            $table->id(); // Creates an auto-incrementing primary key column named 'id'.
+            $table->string('title'); // Creates a string column named 'title' for the book's title.
+            $table->string('author'); // Creates a string column named 'author' for the book's author.
+            $table->string('isbn')->unique(); // Creates a unique string column named 'isbn' for the book's standard book number.
+            $table->integer('quantity')->default(1); // Creates an integer column named 'quantity' with a default value of 1.
+            $table->timestamps(); // Creates 'created_at' and 'updated_at' timestamp columns.
         });
 
     }
@@ -26,8 +26,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down(): void  // This function is used when we want to undo the migration.
     {
-        Schema::dropIfExists('books');
+        Schema::dropIfExists('books'); // Deletes the 'books' table if it exists in the database.
     }
 };
